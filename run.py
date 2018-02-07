@@ -13,7 +13,7 @@ load_dotenv(dotenv_path)
 # Your GOOGLE_CLIENT_ID and GOOGLE_CLIENT SECRET are needed here
 # You can get them at https://code.google.com/apis/console
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID")
-GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_ID")
+GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET")
 
 # This is one of the Redirect URIs from Google APIs console
 REDIRECT_URI = '/oauth2callback'
@@ -54,7 +54,7 @@ def index():
                   None, headers)
     try:
         res = urlopen(req)
-    except URLError as e:
+    except URLError, e:
         if e.code == 401:
             # Unauthorized - bad token
             session.pop('access_token', None)
